@@ -28,3 +28,5 @@ UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
                   ;;update-email;"Update Email"
                   ;;update-profile;"Update Profile"
                   ;;updatePassword;"Update Forgotten Password"
+
+I

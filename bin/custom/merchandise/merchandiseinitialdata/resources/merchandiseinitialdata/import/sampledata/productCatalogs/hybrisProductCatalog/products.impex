@@ -35,8 +35,8 @@ INSERT_UPDATE Product; code[unique = true]; $supercategories; manufacturerName; 
 
 
 # Insert Products
-INSERT_UPDATE Book; code[unique = true]; $supercategories ; manufacturerName; manufacturerAID    ; unit(code); ean; variantType(code); $catalogVersion; $approved; $taxGroup; price; isbn
-                  ; 0213               ; Computer science ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
-                  ; 0214               ; Computer science ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
-                  ; 0215               ; Computer science ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
+INSERT_UPDATE Book; code[unique = true]; $supercategories; manufacturerName; manufacturerAID    ; unit(code); ean; variantType(code); $catalogVersion; $approved; $taxGroup; price; isbn
+                  ; 0213               ; 250             ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
+                  ; 0214               ; 250             ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
+                  ; 0215               ; 250             ; Springer  & Co  ; Springer  & Co-F-L ; pieces    ;
 

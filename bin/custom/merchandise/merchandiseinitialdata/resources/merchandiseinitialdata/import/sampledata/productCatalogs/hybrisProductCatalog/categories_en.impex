@@ -8,13 +8,13 @@ $catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[d
 $lang = en
 
 UPDATE Category; $catalogVersion; code[unique = true]; name[lang = $lang]; description[lang = $lang]
-               ;                ; 1                  ; Hybris Catalogue  ;
+               ;                ; 1                  ; Hybris-Catalogue  ;
                ;                ; 100                ; Stuff             ;
                ;                ; 200                ; Clothes           ;
                ;                ; 210                ; Shirts            ;
                ;                ; 220                ; Sweats            ;
-               ;                ; Books              ; Books             ;
-               ;                ; Psycology          ; Psycology         ;
-               ;                ; Computer science   ; Computer science  ;
-               ;                ; Physics            ; Physics           ;
-               ;                ; Mathematics        ; Mathematics       ;
+               ;                ; 230                ; Books             ;
+               ;                ; 240                ; Psycology         ;
+               ;                ; 250                ; Computer-science  ;
+               ;                ; 260                ; Physics           ;
+               ;                ; 270                ; Mathematics       ;

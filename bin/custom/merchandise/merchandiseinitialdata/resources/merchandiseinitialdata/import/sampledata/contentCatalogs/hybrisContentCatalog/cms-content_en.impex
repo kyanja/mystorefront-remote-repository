@@ -32,7 +32,7 @@ UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]          
                        ;                          ; FAQLink                         ; "FAQ"
                        ;                          ; FacebookLink                    ; "Facebook"
                        ;                          ; TwitterLink                     ; "Twitter"
-                       ;                          ; BookCategoryLink                ; "Books"
+
 # Lightbox Banner for Mini Cart
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpg']; altText                                  ; &imageRef
                    ;                          ; Elec_290x45_HomeDeliveryBanner_EN_01.gif ; $siteResource/images/banners/site/Elec_290x45_HomeDeliveryBanner_EN_01.gif  ;                            ; "Order before 6pm for next day delivery" ; Elec_290x45_HomeDeliveryBanner_EN_01.gif
@@ -67,7 +67,7 @@ UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]
 UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
                    ;                          ; Stuff             ; Stuff
                    ;                          ; Clothes           ; Clothes
-                   ;                          ; Books             ; Books
+
 
 # CMS Navigation Nodes
 INSERT_UPDATE CMSNavigationNode; $contentCV[unique = true]; uid[unique = true]           ; title[lang = $lang]
@@ -129,3 +129,5 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]     
 UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]          ; content[lang = $lang]
                             ;                          ; EmptyCartParagraphComponent ; "<h2>Your shopping cart is empty</h2><p>Suggestions</p><ul><li>Browse our products by selecting a category above</li></ul>"
                             ;                          ; HelpParagraphComponent      ; "<div class=""helpBanner""><span class=""bannerHeadline"" >NEED HELP?</span><span class=""bannerText"">Click here for help with checking out<a href=""#"" >GO > ></a></span></div>"
+
+

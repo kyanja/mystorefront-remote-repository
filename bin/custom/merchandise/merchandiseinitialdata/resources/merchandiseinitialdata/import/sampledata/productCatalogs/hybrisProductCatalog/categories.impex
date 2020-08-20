@@ -14,24 +14,24 @@ INSERT_UPDATE Category; code[unique = true]; allowedPrincipals(uid)[default = 'c
                       ; 200
                       ; 210
                       ; 220
-                      ; Books
-                      ; Psycology
-                      ; Computer science
-                      ; Physics
-                      ; Mathematics
+                      ; 230
+                      ; 240
+                      ; 250
+                      ; 260
+                      ; 270
 
 #
 
 # Insert Category Structure
-INSERT_UPDATE CategoryCategoryRelation; $categories      ; $supercategories
-                                      ; 100              ; 1
-                                      ; 200              ; 1
-                                      ; 210              ; 200
-                                      ; 220              ; 200
-                                      ; Psycology        ; Books
-                                      ; Computer science ; Books
-                                      ; Physics          ; Books
-                                      ; Mathematics      ; Books
-                                      ; Books            ; 1
+INSERT_UPDATE CategoryCategoryRelation; $categories; $supercategories
+                                      ; 100        ; 1
+                                      ; 200        ; 1
+                                      ; 210        ; 200
+                                      ; 220        ; 200
+                                      ; 240        ; 230
+                                      ; 250        ; 230
+                                      ; 260        ; 230
+                                      ; 270        ; 230
+                                      ; 230        ; 1
 
 

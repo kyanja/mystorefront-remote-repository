@@ -1,0 +1,117 @@
+$contentCatalog = hybrisContentCatalog
+$contentCatalogName = Hybris Content Catalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$productCatalog = hybrisProductCatalog
+$productCatalogName = Hybris Product Catalog
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Online'])[unique=true, default=$productCatalog:Online]
+$picture = media(code, $contentCV)                   ;
+$image = image(code, $contentCV)                     ;
+$media = media(code, $contentCV)                     ;
+$page = page(uid, $contentCV)                        ;
+$contentPage = contentPage(uid, $contentCV)          ;
+$product = product(code, $productCV)
+$category = category(code, $productCV)
+$siteResource = jar:de.hybris.merchandise.initialdata.constants.MerchandiseInitialDataConstants&/merchandiseinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:de.hybris.merchandise.initialdata.constants.MerchandiseInitialDataConstants&/merchandiseinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:de.hybris.merchandise.initialdata.constants.MerchandiseInitialDataConstants&/merchandiseinitialdata/import/sampledata/cockpits/cmscockpit
+$contentCatalog = hybrisContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$picture = media(code, $contentCV);
+$siteResource = jar:de.hybris.merchandise.initialdata.setup.InitialDataSystemSetup&/merchandiseinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+# Language
+$lang = en
+
+
+
+
+
+
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; name      ; url                                            ; &linkRef         ; &componentRef    ; target(code)[default = 'sameWindow']; $category; $product;
+                              ;                          ; BookCategoryLink  ; Book Link ; /Hybris-Catalogue/Books/Computer-science/c/250 ; BookCategoryLink ; BookCategoryLink ;                                     ; 250      ;         ;
+
+# Navigation Bar Component
+INSERT_UPDATE NavigationBarComponent; $contentCV[unique = true]; uid[unique = true]; name               ; wrapAfter; link(uid, $contentCV); styleClass; &componentRef
+                                    ;                          ; BookBarComponent  ; Book Bar Component ; 10       ; BookCategoryLink     ;           ; BookBarComponent
+
+
+# Navigation Collection
+INSERT_UPDATE NavigationBarCollectionComponent; $contentCV[unique = true]; uid[unique = true]; name                                ; components(uid, $contentCV)                            ; &componentRef
+                                              ;                          ; NavBarComponent   ; Navigation Bar Collection Component ; StuffBarComponent,ClothesBarComponent,BookBarComponent ; NavBarComponent
+
+
+# Category Pages
+INSERT_UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; name ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; previewImage(code, $contentCV)
+                          ;                          ; Book              ; Book ; ProductListPageTemplate        ; true       ;                                           ;
+
+
+
+# CMS Navigation Nodes #
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name ; children(uid, $contentCV)[mode = append]
+                               ; root              ;                          ; root ; ;
+
+# 8. Create navigation node
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name       ; parent(uid, $contentCV); links(&linkRef)  ; &nodeRef
+                               ; BookNavNode       ;                          ; Book Links ; MerchandiseNavNode     ; BookCategoryLink ; BookNavNode
+
+
+# Navigation Bar Component
+INSERT_UPDATE NavigationBarComponent; $contentCV[unique = true]; uid[unique = true]; navigationNode(&nodeRef); dropDownLayout(code)
+                                    ;                          ; BookBarComponent  ; BookNavNode
+
+
+# CMS Link Components
+UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; linkName[lang = $lang]
+
+                       ;                          ; BookCategoryLink  ; "Books"
+
+
+
+# Category Pages
+UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
+                   ;                          ; Book              ; "Books"
+
+
+
+# CMS Navigation Nodes
+INSERT_UPDATE CMSNavigationNode; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
+
+                               ;                          ; BookNavNode       ; Books
+
+
+
+# CMS Link Components
+UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; linkName[lang = $lang]
+
+                       ;                          ; BookCategoryLink  ; "Books"
+
+
+
+# Category Pages
+UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
+                   ;                          ; Book              ; "Books"
+
+
+
+
+# 1.create CMSParagraphComponent
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]   ; name                      ; &componentRef        ; ; ; ; content[lang = $lang]   ;
+                                   ;                          ; bookHeadingComponent ; Books Heading information ; bookHeadingComponent ; ; ; ; "Special Books for you" ;
+
+# 2.create content slots and add the components to the content solts
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]              ; name                ; active; cmsComponents(uid, $contentCV)
+                         ;                          ; booksParagraphSlot-CategoryPage ; Book Paragraph Slot ; true  ; bookHeadingComponent
+# 3. create book category page
+INSERT_UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; previewImage(code, $contentCV)
+                          ;                          ; BookCategoryPage  ; Book Category Page ; LandingPage2Template           ; false      ;                                           ;
+
+# 4. Link the ContentSoltname with contentSlot
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]           ; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'BookCategoryPage']; contentSlot(uid, $contentCV)[unique = true]
+                                ;                          ; ProductListSlot-CategoryPage ; ProductListSlot        ;                                                                   ; booksParagraphSlot-CategoryPage
+
+
+
+

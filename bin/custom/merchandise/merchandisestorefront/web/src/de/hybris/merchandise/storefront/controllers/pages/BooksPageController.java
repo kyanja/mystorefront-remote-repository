@@ -1,4 +1,4 @@
-git package de.hybris.merchandise.storefront.controllers.pages;
+ package de.hybris.merchandise.storefront.controllers.pages;
 
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
