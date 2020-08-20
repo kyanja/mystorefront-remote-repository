@@ -18712,3 +18712,27 @@ select[multiple].input-sm {
   color: red;
   display: none;
 }
+.booksBannerImg{
+  width:auto;
+  height:auto;
+}
+.booksBannerParagraph{
+  font-weight: bold;
+  margin-right: 5px;
+  color: #0000ff;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Brush Script MT";
+  font-family:"Formal436 BT", "Arial Black", sans-serif
+
+}
+
+.bookBannerParentDiv{
+  text-align: center;
+}
+
+.bookBannerChildDiv{
+  display: inline-block;
+  top:20px;
+  margin-left: 40px;
+}

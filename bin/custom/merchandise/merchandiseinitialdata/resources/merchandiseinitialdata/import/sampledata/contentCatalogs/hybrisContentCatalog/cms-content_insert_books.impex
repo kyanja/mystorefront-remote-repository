@@ -96,22 +96,46 @@ UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; title[lang =
 
 
 
-# 1.create CMSParagraphComponent
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'ProductListPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+                             ; booksParagraph     ;                                                                              ;                          ; wide
+                             ; booksBanner        ;                                                                              ;                          ; wide
+
+
 
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]   ; name                      ; &componentRef        ; ; ; ; content[lang = $lang]   ;
                                    ;                          ; bookHeadingComponent ; Books Heading information ; bookHeadingComponent ; ; ; ; "Special Books for you" ;
 
-# 2.create content slots and add the components to the content solts
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]              ; name                ; active; cmsComponents(uid, $contentCV)
-                         ;                          ; booksParagraphSlot-CategoryPage ; Book Paragraph Slot ; true  ; bookHeadingComponent
-# 3. create book category page
-INSERT_UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; previewImage(code, $contentCV)
-                          ;                          ; BookCategoryPage  ; Book Category Page ; LandingPage2Template           ; false      ;                                           ;
-
-# 4. Link the ContentSoltname with contentSlot
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]           ; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'BookCategoryPage']; contentSlot(uid, $contentCV)[unique = true]
-                                ;                          ; ProductListSlot-CategoryPage ; ProductListSlot        ;                                                                   ; booksParagraphSlot-CategoryPage
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; &componentRef        ; ; ; ; urlLink
+                                   ;                          ; book1BannerComponent ; Book1 Banner Component ; book1BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstJava
+                                   ;                          ; book2BannerComponent ; Book2 Banner Component ; book2BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstProgramming
+                                   ;                          ; book3BannerComponent ; Book3 Banner Component ; book3BannerComponent ; ; ; ; /Categories/Computer science/p/javascript
 
 
 
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; booksContentPage  ; Books Content Page ; ProductListPageTemplate        ; booksCMSPage
 
+
+
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = 'images']; altText
+                   ;                          ; BooksBanner1       ; $siteResource/images/banners/books/BooksBanner1.jpg                         ;                             ;                                      ; "Grab the Book soon"
+                   ;                          ; BooksBanner2       ; $siteResource/images/banners/books/BooksBanner2.png                         ;                             ;                                      ; "Grab the Book soon"
+                   ;                          ; BooksBanner3       ; $siteResource/images/banners/books/BooksBanner3.jpg                         ;                             ;                                      ; "Grab the Discounted Sale soon"
+
+
+
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; $picture[lang = $lang]
+                            ;                          ; book1BannerComponent ; BooksBanner1
+                            ;                          ; book2BannerComponent ; BooksBanner2
+                            ;                          ; book3BannerComponent ; BooksBanner3
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true] ; name                ; active; cmsComponents(uid, $contentCV)
+                         ;                          ; booksParagraphSlot ; Book Paragraph Slot ; true  ; bookHeadingComponent
+                         ;                          ; booksBannerSlot    ; Book Banner Slot    ; true  ; book1BannerComponent,book2BannerComponent,book3BannerComponent
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]           ; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'Book']; contentSlot(uid, $contentCV)[unique = true]
+                                ;                          ; booksParagraphSlot-booksPage ; booksParagraph         ;                                                       ; booksParagraphSlot ; true
+                                ;                          ; booksBannerSlot-booksPage    ; booksBanner            ;                                                       ; booksBannerSlot    ; true
