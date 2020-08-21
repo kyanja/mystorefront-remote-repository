@@ -182,4 +182,7 @@
 	</bean>
 
 	<bean id="genderData" class="de.hybris.merchandise.facades.product.data.GenderData" scope="prototype"/>
+
+	<bean id="bookPopulator" class="de.hybris.merchandise.facades.populators.BookPopulator">
+	</bean>
 </beans>

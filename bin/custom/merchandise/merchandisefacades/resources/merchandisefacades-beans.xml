@@ -9,7 +9,12 @@
 	</bean>
 
 	<bean class="de.hybris.merchandise.facades.product.data.GenderData">
-		<property name="code" type="String"/>
-		<property name="name" type="String"/>
+	<property name="code" type="String"/>
+	<property name="name" type="String"/>
+</bean>
+
+
+	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="alias" type="String"/>
 	</bean>
 </beans>
