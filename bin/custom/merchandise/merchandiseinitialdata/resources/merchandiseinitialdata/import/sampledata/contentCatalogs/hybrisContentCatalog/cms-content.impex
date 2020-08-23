@@ -56,7 +56,7 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
                               ;                          ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ; /my-account/payment-details                                             ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ;                                     ;          ;         ;
                               ;                          ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ; /my-account/orders                                                      ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ;                                     ;          ;         ;
                               ;                          ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ; /my-account/orders                                                      ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ;                                     ;          ;         ;
-
+                              ;                          ; BookCategoryLink                ; Books Link                      ; /Hybris-Catalogue/Books/c/Books                                         ; BookCategoryLink                ; BookCategoryLink                ;                                     ; Books    ;         ;
 
 
 
@@ -77,6 +77,9 @@ INSERT_UPDATE NavigationBarComponent; $contentCV[unique = true]; uid[unique = tr
 
 
 
+# Navigation Bar Book Component
+INSERT_UPDATE NavigationBarComponent; $contentCV[unique = true]; uid[unique = true]; name               ; wrapAfter; link(uid, $contentCV); styleClass; &componentRef
+                                    ;                          ; BookBarComponent  ; Book Bar Component ; 10       ; BookCategoryLink     ;           ; BookBarComponent
 
 # Navigation Bar Component
 INSERT_UPDATE AccountNavigationComponent; $contentCV[unique = true]; uid[unique = true]                       ; name                                         ; navigationNode(&nodeRef)     ; styleClass; &componentRef
@@ -89,8 +92,8 @@ INSERT_UPDATE AccountNavigationComponent; $contentCV[unique = true]; uid[unique 
 INSERT_UPDATE AccountNavigationCollectionComponent; $contentCV[unique = true]; uid[unique = true]       ; name                       ; components(uid, $contentCV)                                                                                                                             ; &componentRef
                                                   ;                          ; AccountHomepageComponent ; Account Homepage Component ; AccountProfileNavigationComponent,AccountAddressBookNavigationComponent,AccountPaymentDetailsNavigationComponent,AccountOrderHistoryNavigationComponent ; AccountHomepageComponent
 # Navigation Collection
-INSERT_UPDATE NavigationBarCollectionComponent; $contentCV[unique = true]; uid[unique = true]; name                                ; components(uid, $contentCV)           ; &componentRef
-                                              ;                          ; NavBarComponent   ; Navigation Bar Collection Component ; StuffBarComponent,ClothesBarComponent ; NavBarComponent
+INSERT_UPDATE NavigationBarCollectionComponent; $contentCV[unique = true]; uid[unique = true]; name                                ; components(uid, $contentCV)                             ; &componentRef
+                                              ;                          ; NavBarComponent   ; Navigation Bar Collection Component ; StuffBarComponent,ClothesBarComponent, BookBarComponent ; NavBarComponent
 # CMS tabs components
 INSERT_UPDATE CMSTabParagraphComponent; $contentCV[unique = true]; uid[unique = true]; name         ; visible; &componentRef
                                       ;                          ; deliveryTab       ; Delivery tab ; true   ; deliveryTab
@@ -101,7 +104,7 @@ INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = 
 # CMS Footer Component
 INSERT_UPDATE FooterComponent; $contentCV[unique = true]; uid[unique = true]; wrapAfter; &componentRef
                              ;                          ; FooterComponent   ; 2        ; FooterComponent
-# 4.create components and link them with content slots
+
 # CMS Paragraph Component (Contact information)
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]   ; name                      ; &componentRef
                                    ;                          ; ContactInfo          ; Contact information       ; ContactInfo
@@ -109,11 +112,19 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                    ;                          ; mywelcomeMessage     ; my welcome Message        ; mywelcomeMessage
                                    ;                          ; bookHeadingComponent ; Books Heading information ; bookHeadingComponent
 
+# CMS SimpleBannerComponent Component (Book information)
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; &componentRef        ; ; ; ; urlLink
+                                   ;                          ; book1BannerComponent ; Book1 Banner Component ; book1BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstJava
+                                   ;                          ; book2BannerComponent ; Book2 Banner Component ; book2BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstProgramming
+                                   ;                          ; book3BannerComponent ; Book3 Banner Component ; book3BannerComponent ; ; ; ; /Categories/Computer science/p/javascript
+# create content slots and add the components to the content solts
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true] ; name                ; active; cmsComponents(uid, $contentCV)
+                         ;                          ; booksParagraphSlot ; Book Paragraph Slot ; true  ; bookHeadingComponent
 
 
-
-
-
+# Create content page
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; booksContentPage  ; Books Content Page ; ProductListPageTemplate              ; booksCMSPage						                            ;                          ; booksBannerSlot    ; Book Banner Slot    ; true  ; book1BannerComponent,book2BannerComponent,book3BannerComponent
 # CMS VariantSelector Components
 INSERT_UPDATE ProductVariantSelectorComponent; $contentCV[unique = true]; uid[unique = true]; name                     ; &componentRef
                                              ;                          ; VariantSelector   ; Product Variant Selector ; VariantSelector
@@ -195,7 +206,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]     ; c
 INSERT_UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; name    ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; previewImage(code, $contentCV)
                           ;                          ; Stuff             ; Stuff   ; ProductListPageTemplate        ; true       ;                                           ;
                           ;                          ; Clothes           ; Clothes ; ProductListPageTemplate        ; true       ;                                           ;
-
+                          ;                          ; Books             ; Books   ; ProductListPageTemplate        ; true       ;                                           ;
 # Update CMS Footer Component with Nav Nodes
 INSERT_UPDATE FooterComponent; $contentCV[unique = true]; uid[unique = true]; navigationNodes(&nodeRef)
                              ;                          ; FooterComponent   ;
@@ -203,9 +214,6 @@ INSERT_UPDATE FooterComponent; $contentCV[unique = true]; uid[unique = true]; na
 # CMS Navigation Nodes #
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name ; children(uid, $contentCV)[mode = append]
                                ; root              ;                          ; root ; ;
-
-# 8. Create navigation node
-
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; $contentCV[unique = true]; name                    ; parent(uid, $contentCV); links(&linkRef)                                                                             ; &nodeRef
                                ; SiteRootNode                 ;                          ; SiteRootNode            ; root                   ;                                                                                             ; SiteRootNode
                                ; MerchandiseNavNode           ;                          ; hybris Merchandise Site ; SiteRootNode           ; HomepageNavLink                                                                             ; MerchandiseNavNode
@@ -219,20 +227,12 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; $contentCV[uniqu
                                ; AccountAddressBookNavNode    ;                          ; Address Book            ; SiteRootNode           ; AccountManageAddressLink                                                                    ; AccountAddressBookNavNode
                                ; AccountPaymentDetailsNavNode ;                          ; Address Book            ; SiteRootNode           ; AccountManagePaymentDetailsLink                                                             ; AccountPaymentDetailsNavNode
                                ; AccountOrderHistoryNavNode   ;                          ; Order History           ; SiteRootNode           ; AccountViewOrderHistoryLink                                                                 ; AccountOrderHistoryNavNode
-
-
-
-
-
-
-
-
-
+                               ; BookNavNode                  ;                          ; Book Links              ; MerchandiseNavNode     ; BookCategoryLink                                                                            ; BookNavNode
 # Navigation Bar Component
 INSERT_UPDATE NavigationBarComponent; $contentCV[unique = true]; uid[unique = true]  ; navigationNode(&nodeRef); dropDownLayout(code)
                                     ;                          ; ClothesBarComponent ; ClothesNavNode
                                     ;                          ; StuffBarComponent   ; StuffNavNode
-
+                                    ;                          ; BookBarComponent    ; BookNavNode
 # Simple Content Pages
 UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true] ; linkComponents(&linkRef)
                   ;                          ; faq                ; FAQLink
@@ -242,8 +242,8 @@ UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true] ; linkComponen
 
 ###### Merchandise Homepage ######
 
-INSERT_UPDATE ProductCarouselComponent; $contentCV[unique = true]; uid[unique = true]                     ; name                             ; products(code, $productCV)                                                                                    ; scroll(code); &componentRef
-                                      ;                          ; HybrisHomepageProductCarouselComponent ; Hybris Homepage Product Carousel ; 0007,0001,0002,0003,0004,0005,0006,0100,0101,0102,0110,0111,0112,0200,0201,0202,0210,0211,0212,0213,0214,0215 ; allVisible  ; HybrisHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent; $contentCV[unique = true]; uid[unique = true]                     ; name                             ; products(code, $productCV)                                                                     ; scroll(code); &componentRef
+                                      ;                          ; HybrisHomepageProductCarouselComponent ; Hybris Homepage Product Carousel ; 0007,0001,0002,0003,0004,0005,0006,0100,0101,0102,0110,0111,0112,0200,0201,0202,0210,0211,0212 ; allVisible  ; HybrisHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]     ; name                        ; active; cmsComponents(&componentRef)
                          ;                          ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true  ; welcomeMessage,mywelcomeMessage
@@ -565,4 +565,3 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
 
 INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]   ; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'multiStepCheckoutSummaryPage']; contentSlot(uid, $contentCV)[unique = true]
                                 ;                          ; Side-CheckoutSummary ; SideContent            ;                                                                               ; SideContent-CheckoutSummary
-

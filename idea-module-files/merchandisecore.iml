@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="merchandisecorespring" name="merchandisecorespring" removed="false">
+          <dependency>solrserverspring==solrserver</dependency>
+          <dependency>acceleratorcmsspring==acceleratorcms</dependency>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-salesrep-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-post-cancellation-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-seller-approval-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-to-expire-soon-email-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/integration/hot-folder-store-electronics-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/integration/hot-folder-store-apparel-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-expired-email-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/integration/hot-folder-common-spring.xml</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/project.properties</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources/merchandisecore/processes/quote/quote-buyer-process-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="https://download.hybris.com/api/1905/commercesuite" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore">
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/backoffice/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/web/webroot/WEB-INF/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisecore/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="solrserver" exported="" />
+    <orderEntry type="module" module-name="acceleratorcms" exported="" />
+  </component>
+</module>

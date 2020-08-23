@@ -16,5 +16,7 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="alias" type="String"/>
+		<property name="onlineDays" type="int"/>
+		<property name="unit" type="String"/>
 	</bean>
 </beans>

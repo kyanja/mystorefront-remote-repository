@@ -185,4 +185,19 @@
 
 	<bean id="bookPopulator" class="de.hybris.merchandise.facades.populators.BookPopulator">
 	</bean>
+
+	<!-- ...\trainingfacades\resources\trainingfacades-spring.xml -->
+
+	<alias name="customSearchResultUnitVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>
+	<bean id="customSearchResultUnitVariantProductPopulator"
+		  class="de.hybris.merchandise.facades.populators.CustomSearchResultUnitVariantProductPopulator"
+		  parent="variantCommerceSearchResultProductPopulator">
+	</bean>
+
+	<alias name="customSearchResultOnlineDaysVariantProductPopulator" alias="commerceSearchResultProductPopulator"/>
+	<bean id="customSearchResultOnlineDaysVariantProductPopulator"
+		  class="de.hybris.merchandise.facades.populators.CustomSearchResultOnlineDaysVariantProductPopulator"
+		  parent="variantCommerceSearchResultProductPopulator">
+	</bean>
+
 </beans>

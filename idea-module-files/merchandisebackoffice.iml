@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="merchandisebackofficespring" name="merchandisebackofficespring" removed="false">
+          <dependency>merchandisecorespring==merchandisecore</dependency>
+          <dependency>backofficespring==backoffice</dependency>
+          <dependency>acceleratorbackofficespring==acceleratorbackoffice</dependency>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/project.properties</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/resources/merchandisebackoffice-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="https://download.hybris.com/api/1905/commercesuite" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice">
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/backoffice/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/web/webroot/WEB-INF/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisebackoffice/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../bin/modules/backoffice-framework/backoffice/web/webroot/WEB-INF/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../bin/modules/backoffice-framework/backoffice/web/webroot/WEB-INF/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../bin/modules/backoffice-framework/backoffice/web/webroot/WEB-INF/classes" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="merchandisecore" exported="" />
+    <orderEntry type="module" module-name="backoffice" exported="" />
+    <orderEntry type="module" module-name="acceleratorbackoffice" exported="" />
+  </component>
+</module>

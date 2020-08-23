@@ -42,3 +42,5 @@ INSERT_UPDATE SolrCategoryRedirect;redirectItem(code,$productCatalogVersion)[uni
 
 INSERT_UPDATE SolrProductRedirect;redirectItem(code,$productCatalogVersion)[unique=true]
 
+
+

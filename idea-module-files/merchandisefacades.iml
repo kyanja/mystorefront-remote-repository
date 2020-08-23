@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="merchandisefacadesspring" name="merchandisefacadesspring" removed="false">
+          <dependency>acceleratorfacadesspring==acceleratorfacades</dependency>
+          <dependency>merchandisecorespring==merchandisecore</dependency>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/project.properties</file>
+          <file>file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/resources/merchandisefacades-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="https://download.hybris.com/api/1905/commercesuite" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades">
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/backoffice/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/web/webroot/WEB-INF/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../bin/custom/merchandise/merchandisefacades/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="acceleratorfacades" exported="" />
+    <orderEntry type="module" module-name="merchandisecore" exported="" />
+  </component>
+</module>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 19 août 2020 à 13:57:41                     ---
+ * --- Generated at 23 août 2020 à 01:26:38                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -20,14 +20,17 @@ import de.hybris.merchandise.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.merchandise.core.jalo.Author;
 import de.hybris.merchandise.core.jalo.Book;
 import de.hybris.merchandise.core.jalo.ElectronicsColorVariantProduct;
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +44,9 @@ public abstract class GeneratedMerchandiseCoreManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("alias", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -53,6 +59,42 @@ public abstract class GeneratedMerchandiseCoreManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.alias</code> attribute.
+	 * @return the alias
+	 */
+	public String getAlias(final SessionContext ctx, final Product item)
+	{
+		return (String)item.getProperty( ctx, MerchandiseCoreConstants.Attributes.Product.ALIAS);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.alias</code> attribute.
+	 * @return the alias
+	 */
+	public String getAlias(final Product item)
+	{
+		return getAlias( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.alias</code> attribute. 
+	 * @param value the alias
+	 */
+	public void setAlias(final SessionContext ctx, final Product item, final String value)
+	{
+		item.setProperty(ctx, MerchandiseCoreConstants.Attributes.Product.ALIAS,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.alias</code> attribute. 
+	 * @param value the alias
+	 */
+	public void setAlias(final Product item, final String value)
+	{
+		setAlias( getSession().getSessionContext(), item, value );
 	}
 	
 	public ApparelProduct createApparelProduct(final SessionContext ctx, final Map attributeValues)

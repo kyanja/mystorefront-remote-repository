@@ -204,3 +204,18 @@ INSERT_UPDATE SolrSearchQueryProperty; indexedProperty(name, solrIndexedType(ide
 # impex for indexing alias attribute
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); sortableType(code); currency[default = false]; localized[default = false]; multiValue[default = false]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider; valueProviderParameter
                                  ; $solrIndexedType                          ; alias              ; string    ;                   ;                          ;                           ;                            ; true                                ; true                               ;
+
+
+
+
+# .../merchandiseinitialdata/import/coredata/stores/hybris/solr.impex
+
+
+
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); localized[default = false]; fieldValueProvider       ; useForSpellchecking[default = true]; useForAutocomplete[default = true];
+                                 ; $solrIndexedType                          ; unit               ; string    ; true                      ; productUnitValueProvider ;                                    ;
+
+
+#Impex for adding new indexing property
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); sortableType(code); currency[default = false]; localized[default = false]; multiValue[default = false]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider; valueProviderParameter
+                                 ; $solrIndexedType                          ; onlineDays         ; int       ;                   ;                          ;                           ;                            ;                                     ;                                    ; productOnlineDaysValueProvider

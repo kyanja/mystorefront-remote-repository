@@ -108,9 +108,9 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                    ;                          ; bookHeadingComponent ; Books Heading information ; bookHeadingComponent ; ; ; ; "Special Books for you" ;
 
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; &componentRef        ; ; ; ; urlLink
-                                   ;                          ; book1BannerComponent ; Book1 Banner Component ; book1BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstJava
-                                   ;                          ; book2BannerComponent ; Book2 Banner Component ; book2BannerComponent ; ; ; ; /Categories/Computer science/p/headFirstProgramming
-                                   ;                          ; book3BannerComponent ; Book3 Banner Component ; book3BannerComponent ; ; ; ; /Categories/Computer science/p/javascript
+                                   ;                          ; book1BannerComponent ; Book1 Banner Component ; book1BannerComponent ; ; ; ; /Hybris-Catalogue/Computer-science/p/0213
+                                   ;                          ; book2BannerComponent ; Book2 Banner Component ; book2BannerComponent ; ; ; ; /Hybris-Catalogue/Computer-science/p/0214
+                                   ;                          ; book3BannerComponent ; Book3 Banner Component ; book3BannerComponent ; ; ; ; /Hybris-Catalogue/Computer-science/p/0215
 
 
 

@@ -25,3 +25,4 @@ UPDATE SolrSort;indexedType(identifier)[unique=true];code[unique=true];name[lang
                ;$solrIndexedType;price-desc;"Price (highest first)";"false";
                ;$solrIndexedType;relevance;"Relevance";"true";
                ;$solrIndexedType;topRated;"Top Rated";"false";
+
