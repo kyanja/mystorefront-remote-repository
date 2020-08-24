@@ -3,6 +3,7 @@
  */
 package de.hybris.merchandise.facades.populators;
 
+import de.hybris.merchandise.core.model.BookModel;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.converters.Populator;
 import de.hybris.platform.core.enums.Gender;
@@ -23,49 +24,43 @@ import org.springframework.beans.factory.annotation.Required;
 /**
  * Populates {@link ProductData} with genders
  */
-public class ApparelProductPopulator implements Populator<ProductModel, ProductData>
-{
-	private Converter<Gender, GenderData> genderConverter;
+public class ApparelProductPopulator implements Populator<ProductModel, ProductData> {
+    private Converter<Gender, GenderData> genderConverter;
 
-	protected Converter<Gender, GenderData> getGenderConverter()
-	{
-		return genderConverter;
-	}
+    protected Converter<Gender, GenderData> getGenderConverter() {
+        return genderConverter;
+    }
 
-	@Required
-	public void setGenderConverter(final Converter<Gender, GenderData> genderConverter)
-	{
-		this.genderConverter = genderConverter;
-	}
+    @Required
+    public void setGenderConverter(final Converter<Gender, GenderData> genderConverter) {
+        this.genderConverter = genderConverter;
+    }
 
-	@Override
-	public void populate(final ProductModel source, final ProductData target) throws ConversionException
-	{
-		final ProductModel baseProduct = getBaseProduct(source);
+    @Override
+    public void populate(final ProductModel source, final ProductData target) throws ConversionException {
+        final ProductModel baseProduct = getBaseProduct(source);
 
-		if (baseProduct instanceof ApparelProductModel)
-		{
-			final ApparelProductModel apparelProductModel = (ApparelProductModel) baseProduct;
-			if (CollectionUtils.isNotEmpty(apparelProductModel.getGenders()))
-			{
-				final List<GenderData> genders = new ArrayList<GenderData>();
-				for (final Gender gender : apparelProductModel.getGenders())
-				{
-					genders.add(getGenderConverter().convert(gender));
-				}
-				target.setGenders(genders);
-			}
-		}
-	}
+        if (baseProduct instanceof ApparelProductModel) {
+            final ApparelProductModel apparelProductModel = (ApparelProductModel) baseProduct;
+            if (CollectionUtils.isNotEmpty(apparelProductModel.getGenders())) {
+                final List<GenderData> genders = new ArrayList<GenderData>();
+                for (final Gender gender : apparelProductModel.getGenders()) {
+                    genders.add(getGenderConverter().convert(gender));
+                }
+                target.setGenders(genders);
+            }
+        }
 
-	protected ProductModel getBaseProduct(final ProductModel productModel)
-	{
-		ProductModel currentProduct = productModel;
-		while (currentProduct instanceof VariantProductModel)
-		{
-			final VariantProductModel variant = (VariantProductModel) currentProduct;
-			currentProduct = variant.getBaseProduct();
-		}
-		return currentProduct;
-	}
+            target.setAlias(baseProduct.getAlias());
+
+    }
+
+    protected ProductModel getBaseProduct(final ProductModel productModel) {
+        ProductModel currentProduct = productModel;
+        while (currentProduct instanceof VariantProductModel) {
+            final VariantProductModel variant = (VariantProductModel) currentProduct;
+            currentProduct = variant.getBaseProduct();
+        }
+        return currentProduct;
+    }
 }
