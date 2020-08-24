@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 24 août 2020 à 00:30:45                     ---
+ * --- Generated at 24 août 2020 à 02:58:25                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -33,9 +33,14 @@ public class GeneratedMerchandiseCoreConstants
 	}
 	public static class Attributes
 	{
+		public static class Customer
+		{
+			public static final String ISINTERNAL = "isInternal".intern();
+		}
 		public static class Product
 		{
 			public static final String ALIAS = "alias".intern();
+			public static final String INTERNALONLY = "internalOnly".intern();
 		}
 	}
 	public static class Enumerations

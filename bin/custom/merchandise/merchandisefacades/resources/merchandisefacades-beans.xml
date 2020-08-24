@@ -9,6 +9,7 @@
         <property name="alias" type="String"/>
         <property name="onlineDays" type="int"/>
         <property name="unit" type="String"/>
+        <property name="internalOnly" type="boolean"/>
     </bean>
 
     <bean class="de.hybris.merchandise.facades.product.data.GenderData">
@@ -23,6 +24,8 @@
     <!--        <property name="unit" type="String"/>-->
     <!--    </bean>-->
 
-
+    <bean class="de.hybris.platform.commercefacades.user.data.CustomerData">
+        <property name="internal" type="boolean"/>
+    </bean>
 
 </beans>

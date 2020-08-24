@@ -611,4 +611,6 @@
           parent="abstractPropertyFieldValueProvider">
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
     </bean>
+    <bean id="dynamicHybrisCustomerAttributeBean"
+          class="de.hybris.merchandise.core.model.DynamicHybrisCustomerAttributeBean"/>
 </beans>

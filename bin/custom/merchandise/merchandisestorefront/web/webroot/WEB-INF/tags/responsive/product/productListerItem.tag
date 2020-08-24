@@ -21,11 +21,13 @@
 
 <li class="${fn:escapeXml(productTagClasses)}">
 	<ycommerce:testId code="test_searchPage_wholeProduct">
-		<a class="product__list--thumb" href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}" >
+		<a class="product__list--thumb" href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}">
+
 			<product:productPrimaryImage product="${product}" format="thumbnail"/>
 		</a>
 		<ycommerce:testId code="searchPage_productName_link_${product.code}">
-			<a class="product__list--name" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
+			Unit : ${product.unit}
+			<a class="product__list--name" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name) }</a>
 		</ycommerce:testId>
 
 		<div class="product__list--price-panel">
@@ -40,6 +42,7 @@
 			<ycommerce:testId code="searchPage_price_label_${product.code}">
 				<div class="product__listing--price"><product:productListerItemPrice product="${product}"/></div>
 			</ycommerce:testId>
+
 		</div>
 
 		<c:if test="${not empty product.summary}">

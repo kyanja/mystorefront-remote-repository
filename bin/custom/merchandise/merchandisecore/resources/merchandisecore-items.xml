@@ -34,14 +34,14 @@
                  generate="false"/>
     </maptypes>
     <relations>
-    <relation code="Author2Books" localized="false" generate="true" autocreate="true">
-        <sourceElement type="Author" qualifier="author" cardinality="one">
-            <modifiers read="true" write="true" search="true" optional="true"/>
-        </sourceElement>
-        <targetElement type="Book" qualifier="books" cardinality="many">
-            <modifiers read="true" write="true" search="true" optional="true"/>
-        </targetElement>
-    </relation>
+        <relation code="Author2Books" localized="false" generate="true" autocreate="true">
+            <sourceElement type="Author" qualifier="author" cardinality="one">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement type="Book" qualifier="books" cardinality="many">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </targetElement>
+        </relation>
 
     </relations>
     <itemtypes>
@@ -122,75 +122,98 @@
         </typegroup>
 
         <typegroup name="Books">
-        <itemtype code="Author" extends="GenericItem"
-                  autocreate="true" generate="true">
-            <deployment table="Author" typecode="20001" />
-            <attributes>
-                <attribute qualifier="authourId" type="java.lang.String">
-                    <modifiers optional="false" unique="true"/>
-                    <persistence type="property" />
-                </attribute>
+            <itemtype code="Author" extends="GenericItem"
+                      autocreate="true" generate="true">
+                <deployment table="Author" typecode="20001"/>
+                <attributes>
+                    <attribute qualifier="authourId" type="java.lang.String">
+                        <modifiers optional="false" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute qualifier="registrationNo" type="java.lang.String">
-                    <modifiers optional="false" unique="true"/>
-                    <persistence type="property" />
-                </attribute>
+                    <attribute qualifier="registrationNo" type="java.lang.String">
+                        <modifiers optional="false" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="name"
-                           type="java.lang.String">
-                    <modifiers optional="false" />
-                    <persistence type="property" />
-                </attribute>
+                    <attribute autocreate="true" qualifier="name"
+                               type="java.lang.String">
+                        <modifiers optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="awards"
-                           type="StringCollection">
-                    <modifiers optional="true" />
-                    <persistence type="property" />
-                </attribute>
+                    <attribute autocreate="true" qualifier="awards"
+                               type="StringCollection">
+                        <modifiers optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="gender"
-                           type="Gender">
-                    <modifiers optional="false" />
-                    <persistence type="property" />
-                </attribute>
+                    <attribute autocreate="true" qualifier="gender"
+                               type="Gender">
+                        <modifiers optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="hobbies"
-                           type="HobbiesMap">
-                    <modifiers optional="true" />
-                    <persistence type="property" />
-                </attribute>
-            </attributes>
-        </itemtype>
+                    <attribute autocreate="true" qualifier="hobbies"
+                               type="HobbiesMap">
+                        <modifiers optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
 
-        <itemtype code="Book" extends="Product"
-                  autocreate="true" generate="true">/>
-            <attributes>
-                <attribute qualifier="isbn" type="java.lang.String">
-                    <modifiers optional="true" unique="true"/>
-                    <persistence type="property" />
-                </attribute>
+            <itemtype code="Book" extends="Product"
+                      autocreate="true" generate="true">/>
+                <attributes>
+                    <attribute qualifier="isbn" type="java.lang.String">
+                        <modifiers optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="price"
-                           type="java.lang.Double">
-                    <modifiers optional="true" />
-                    <persistence type="property" />
-                </attribute>
+                    <attribute autocreate="true" qualifier="price"
+                               type="java.lang.Double">
+                        <modifiers optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 
-                <attribute autocreate="true" qualifier="bookType"
-                           type="java.lang.String">
-                    <modifiers search="true"
-                               optional="true" />
-                    <persistence type="property" />
-                </attribute>
-            </attributes>
-        </itemtype>
+                    <attribute autocreate="true" qualifier="bookType"
+                               type="java.lang.String">
+                        <modifiers search="true"
+                                   optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
             <itemtype code="Product" autocreate="false" generate="false">
                 <attributes>
                     <attribute autocreate="true" qualifier="alias" type="java.lang.String"
                                generate="true">
-                        <persistence type="property" />
+                        <persistence type="property"/>
                         <modifiers read="true" write="true" search="true"
-                                   initial="true" optional="true" unique="false" />
+                                   initial="true" optional="true" unique="false"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+        <typegroup name="merchandise">
+            <itemtype code="Product" autocreate="false" generate="false">
+                <description>Extending the Product type from core with additional attributes.</description>
+                <attributes>
+                    <attribute qualifier="internalOnly" type="java.lang.Boolean">
+                        <description>Defines if the product should be sold to hybris employees only.</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="Customer" generate="false" autocreate="false">
+                <attributes>
+                    <attribute qualifier="isInternal" type="java.lang.Boolean">
+                        <description>Defines if the customer is a hybris internal employee. Aggregated information
+                        </description>
+                        <persistence type="dynamic" attributeHandler="dynamicHybrisCustomerAttributeBean"/>
+                        <modifiers read="true" write="true" optional="true"
+                                   unique="false"/>
                     </attribute>
                 </attributes>
             </itemtype>
