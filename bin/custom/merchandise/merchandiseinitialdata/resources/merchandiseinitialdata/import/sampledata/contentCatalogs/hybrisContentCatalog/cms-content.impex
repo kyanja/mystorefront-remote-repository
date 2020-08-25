@@ -56,7 +56,7 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
                               ;                          ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ; /my-account/payment-details                                             ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ;                                     ;          ;         ;
                               ;                          ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ; /my-account/orders                                                      ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ;                                     ;          ;         ;
                               ;                          ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ; /my-account/orders                                                      ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ;                                     ;          ;         ;
-                              ;                          ; BookCategoryLink                ; Books Link                      ; /Hybris-Catalogue/Books/c/Books                                         ; BookCategoryLink                ; BookCategoryLink                ;                                     ; Books    ;         ;
+                              ;                          ; BookCategoryLink                ; Books Link                      ; /Hybris-Catalogue/Books/c/Books                                         ; BookCategoryLink                ; BookCategoryLink                ;                                     ; 230      ;         ;
 
 
 
@@ -123,8 +123,8 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true] ; name 
 
 
 # Create content page
-INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; booksContentPage  ; Books Content Page ; ProductListPageTemplate              ; booksCMSPage						                            ;                          ; booksBannerSlot    ; Book Banner Slot    ; true  ; book1BannerComponent,book2BannerComponent,book3BannerComponent
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name               ; masterTemplate(uid, $contentCV); label        ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; booksContentPage  ; Books Content Page ; ProductListPageTemplate        ; booksCMSPage ;                              ; booksBannerSlot                           ; Book Banner Slot ; true ; book1BannerComponent,book2BannerComponent,book3BannerComponent
 # CMS VariantSelector Components
 INSERT_UPDATE ProductVariantSelectorComponent; $contentCV[unique = true]; uid[unique = true]; name                     ; &componentRef
                                              ;                          ; VariantSelector   ; Product Variant Selector ; VariantSelector

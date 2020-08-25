@@ -12,13 +12,17 @@
 
     <context:annotation-config/>
 
-	<!-- System Setup -->
+    <!-- System Setup -->
 
-	<bean id="yAcceleratorInitialDataSystemSetup"
-	      class="de.hybris.merchandise.initialdata.setup.InitialDataSystemSetup"
-	      parent="abstractCoreSystemSetup">
-		<property name="coreDataImportService" ref="coreDataImportService"/>
-		<property name="sampleDataImportService" ref="sampleDataImportService"/>
-	</bean>
+    <bean id="yAcceleratorInitialDataSystemSetup"
+          class="de.hybris.merchandise.initialdata.setup.InitialDataSystemSetup"
+          parent="abstractCoreSystemSetup">
+        <property name="coreDataImportService" ref="coreDataImportService"/>
+        <property name="sampleDataImportService" ref="sampleDataImportService"/>
+    </bean>
 
+    <alias name="merchandiseDataImportService" alias="sampleDataImportService"/>
+    <bean id="merchandiseDataImportService"
+          class="de.hybris.merchandise.initialdata.dataimport.impl.MerchandiseDataImportService"
+          parent="defaultSampleDataImportService"/>
 </beans>

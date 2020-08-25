@@ -2,11 +2,61 @@
 # Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 # -----------------------------------------------------------------------
 # ImpEx for Importing Product Reviews
- 
+
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog = hybrisProductCatalog
 
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
-
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Online'])[unique=true, default=$productCatalog:Online]
+$lang = en
 # Reviews from Customers
-INSERT_UPDATE CustomerReview;product(code,$catalogVersion)[unique=true];user(uid)[unique=true];alias;approvalStatus(code);blocked;comment;headline;language(isocode);rating
+INSERT_UPDATE CustomerReview; product(code, $catalogVersion)[unique = true]; user(uid)[unique = true]      ; alias; approvalstatus(code)[default = 'approved']; blocked[default = 'false']; comment; headline; language(isocode); rating
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 2
+                            ; 0002                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0002                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 4
+                            ; 0003                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0004                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0004                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 5
+                            ; 0005                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0006                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0006                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 5
+                            ; 0006                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0100                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0100                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 3
+                            ; 0100                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0101                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0101                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 2
+                            ; 0101                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0102                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 4
+                            ; 0102                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 3
+                            ; 0102                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 1
+                            ; 0110                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0110                                         ; testuser2@test.com            ;      ;                                           ;                           ; ok     ;         ; $lang            ; 5
+                            ; 0110                                         ; testuser1@test.com            ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; promotionuser@test.com        ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; orderhistoryuser@test.com     ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; testwomenvipsilver@hybris.com ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; women@hybris.com              ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer7@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer20@hybris.com     ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer1@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer1@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer1@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer1@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0110                                         ; keenreviewer1@hybris.com      ;      ;                                           ;                           ; poor   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+                            ; 0001                                         ; testuser3@hybris.com          ;      ;                                           ;                           ; Good   ;         ; $lang            ; 5
+
+
+
+
