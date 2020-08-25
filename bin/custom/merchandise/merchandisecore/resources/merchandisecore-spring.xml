@@ -613,4 +613,8 @@
     </bean>
     <bean id="dynamicHybrisCustomerAttributeBean"
           class="de.hybris.merchandise.core.model.DynamicHybrisCustomerAttributeBean"/>
+
+    <bean id="rangedAvgCustomerRatingProvider"
+          class="de.hybris.merchandise.core.search.solrfacetsearch.provider.impl.MerchandiseProductReviewAverageRatingValueProvider"
+          parent="productReviewAverageRatingValueProvider"/>
 </beans>
