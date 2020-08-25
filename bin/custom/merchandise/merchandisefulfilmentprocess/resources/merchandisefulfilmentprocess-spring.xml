@@ -114,4 +114,38 @@
 		<property name="sessionService" ref="sessionService"/>
 	</bean>
 
+	<alias alias="dynamicAttributesOrderStatusDisplay" name ="merchandiseDynamicAttributesOrderStatusDisplayByMap"/>
+	<bean id="merchandiseDynamicAttributesOrderStatusDisplayByMap" parent="acceleratorDynamicAttributesOrderStatusDisplayByMap">
+		<property name="statusDisplayMap">
+<!--			<map merge="true">-->
+<!--				<entry key="WAITING_FOR_IMMEDIATE_CANCEL" value="waitingForImmediateCancel"/>-->
+<!--			</map>-->
+			<map>
+
+				<entry key="CREATED" value="created" />
+
+				<entry key="OPEN" value="open" />
+
+				<entry key="CANCELLED" value="cancelled" />
+
+				<entry key="CANCELLING" value="cancelling" />
+
+				<entry key="COMPLETED" value="completed" />
+
+				<entry key="CHECKED_INVALID" value="error" />
+
+				<entry key="PAYMENT_AMOUNT_NOT_RESERVED" value="error" />
+
+				<entry key="PAYMENT_NOT_AUTHORIZED" value="error" />
+
+				<entry key="PAYMENT_NOT_CAPTURED" value="error" />
+
+				<entry key="PROCESSING_ERROR" value="error" />
+
+				<entry key="WAITING_FOR_IMMEDIATE_CANCEL" value="waitingForImmediateCancel"/>
+
+			</map>
+		</property>
+	</bean>
+
 </beans>
